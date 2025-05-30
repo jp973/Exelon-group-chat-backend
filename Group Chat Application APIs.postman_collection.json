@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "2cf6a8e5-4f1d-4fbe-b367-987d1d560ca4",
+		"name": "Group Chat Application APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41742752"
+	},
+	"item": [
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "rooms",
+			"item": [
+				{
+					"name": "Create Room",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM5M2E1YTM4NjlmZjljZmVjZjc4NGMiLCJpYXQiOjE3NDg1ODEwMzksImV4cCI6MTc0ODY2NzQzOX0.QyzmhHTNS8LpAur1BKPiWs8LroVmYxFtHHFEF3e1oN8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"special\",\r\n  \"description\": \"secret discussion room\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/rooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Rooms",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM5M2E1YTM4NjlmZjljZmVjZjc4NGMiLCJpYXQiOjE3NDg1ODEwMzksImV4cCI6MTc0ODY2NzQzOX0.QyzmhHTNS8LpAur1BKPiWs8LroVmYxFtHHFEF3e1oN8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/rooms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Room",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM5M2E1YTM4NjlmZjljZmVjZjc4NGMiLCJpYXQiOjE3NDg1ODEwMzksImV4cCI6MTc0ODY2NzQzOX0.QyzmhHTNS8LpAur1BKPiWs8LroVmYxFtHHFEF3e1oN8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/rooms/68393dfb6012b016f764364a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rooms",
+								"68393dfb6012b016f764364a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room Membership",
+			"item": [
+				{
+					"name": "Join Room",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM5M2E1YTM4NjlmZjljZmVjZjc4NGMiLCJpYXQiOjE3NDg1ODEwMzksImV4cCI6MTc0ODY2NzQzOX0.QyzmhHTNS8LpAur1BKPiWs8LroVmYxFtHHFEF3e1oN8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/rooms/68393c9a6012b016f764363f/join",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rooms",
+								"68393c9a6012b016f764363f",
+								"join"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Leave Room",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM5M2E1YTM4NjlmZjljZmVjZjc4NGMiLCJpYXQiOjE3NDg1ODEwMzksImV4cCI6MTc0ODY2NzQzOX0.QyzmhHTNS8LpAur1BKPiWs8LroVmYxFtHHFEF3e1oN8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/rooms/68393c9a6012b016f764363f/leave",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rooms",
+								"68393c9a6012b016f764363f",
+								"leave"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List My Rooms",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM5M2E1YTM4NjlmZjljZmVjZjc4NGMiLCJpYXQiOjE3NDg1ODEwMzksImV4cCI6MTc0ODY2NzQzOX0.QyzmhHTNS8LpAur1BKPiWs8LroVmYxFtHHFEF3e1oN8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/rooms/user/68393a5a3869ff9cfecf784c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rooms",
+								"user",
+								"68393a5a3869ff9cfecf784c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Messaging System",
+			"item": [
+				{
+					"name": "Send a message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM5M2E1YTM4NjlmZjljZmVjZjc4NGMiLCJpYXQiOjE3NDg1ODEwMzksImV4cCI6MTc0ODY2NzQzOX0.QyzmhHTNS8LpAur1BKPiWs8LroVmYxFtHHFEF3e1oN8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content\": \"its time to move to the next project\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/rooms/68393c9a6012b016f764363f/messages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rooms",
+								"68393c9a6012b016f764363f",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get last N messages:",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODM5M2E1YTM4NjlmZjljZmVjZjc4NGMiLCJpYXQiOjE3NDg1ODEwMzksImV4cCI6MTc0ODY2NzQzOX0.QyzmhHTNS8LpAur1BKPiWs8LroVmYxFtHHFEF3e1oN8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/rooms/68393c9a6012b016f764363f/messages?limit=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"rooms",
+								"68393c9a6012b016f764363f",
+								"messages"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
